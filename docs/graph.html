@@ -1,0 +1,40 @@
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>グラブルxシンデレラガールズコラボ掛け合いネットワーク</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vis/4.20.0/vis.min.js"></script>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/vis/4.20.0/vis.min.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    h1 { font-size: 1em; }
+    @font-face {
+      font-family: 'Noto Sans JP';
+      font-style: normal;
+      font-weight: 400;
+        src: local("Noto Sans CJK JP"),
+        url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.otf) format('opentype');
+    }
+  </style>
+</head>
+<body>
+<h1>グラブルxシンデレラガールズコラボ掛け合いネットワーク</h1>
+<div id="mygraph"></div>
+<script type="text/javascript">
+  var container = document.getElementById('mygraph');
+  var nodes = new vis.DataSet(
+[{"id":1,"label":"島村卯月","group":"光"},{"id":2,"label":"渋谷凛","group":"水"},{"id":3,"label":"本田未央","group":"火"},{"id":4,"label":"城ヶ崎美嘉","group":"闇"},{"id":5,"label":"川島瑞樹","group":"水"},{"id":6,"label":"前川みく","group":"風"},{"id":7,"label":"双葉杏","group":"土"},{"id":8,"label":"白坂小梅","group":"闇"},{"id":9,"label":"三村かな子","group":"土"},{"id":10,"label":"城ヶ崎莉嘉","group":"火"},{"id":11,"label":"輿水幸子","group":"光"},{"id":12,"label":"十時愛梨","group":"土"},{"id":13,"label":"赤城みりあ","group":"火"},{"id":14,"label":"アナスタシア","group":"水"},{"id":15,"label":"神崎蘭子","group":"闇"},{"id":16,"label":"新田美波","group":"水"},{"id":17,"label":"一ノ瀬志希","group":"風"}]
+  );
+
+  var edges = new vis.DataSet(
+[{"from":1,"to":2},{"from":1,"to":3},{"from":2,"to":3},{"from":4,"to":10},{"from":6,"to":10},{"from":5,"to":11},{"from":9,"to":12},{"from":8,"to":13},{"from":6,"to":14},{"from":8,"to":14},{"from":12,"to":15},{"from":14,"to":15},{"from":5,"to":16},{"from":14,"to":16},{"from":15,"to":16},{"from":4,"to":17},{"from":6,"to":17}]
+  );
+
+  var data = { nodes: nodes, edges: edges };
+  var options = {"nodes":{"shape":"circle"},"groups":{"火":{"color":"#fee","border":"red"},"水":{"color":"#eef","border":"blue"},"風":{"color":"#efe","border":"green"},"土":{"color":"#d7A992","border":"#734229"},"闇":{"color":"#ddd","border":"black"},"光":{"color":"#ff3","border":"#cbcc00"}}};
+
+  var network = new vis.Network(container, data, options);
+</script>
+</body>
+
+</html>
